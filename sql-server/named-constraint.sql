@@ -1,0 +1,36 @@
+DROP TABLE IF EXISTS Table1;
+CREATE TABLE Table1
+(
+  Column1 int CONSTRAINT PK_Table1 PRIMARY KEY
+);
+
+DROP TABLE IF EXISTS Table1;
+CREATE TABLE Table1
+(
+  Column1 int,
+  Column2 int,
+  CONSTRAINT PK_Table1 PRIMARY KEY (Column1, Column2)
+);
+
+DROP TABLE IF EXISTS Table2;
+CREATE TABLE Table2
+(
+  Column3 int CONSTRAINT PK_Table2 PRIMARY KEY
+);
+
+ALTER TABLE Table1 DROP CONSTRAINT IF EXISTS FK_Table1_Column2;
+
+-- Create a table with a foreign key
+DROP TABLE IF EXISTS Table1;
+CREATE TABLE Table1
+(
+  Column1 int CONSTRAINT PK_Table1 PRIMARY KEY,
+  Column2 int CONSTRAINT FK_Table1_Column2 FOREIGN KEY REFERENCES Table2(Column3) ON DELETE CASCADE ON UPDATE CASCADE
+);
+
+DROP TABLE IF EXISTS Table1;
+CREATE TABLE Table1
+(
+  Column1 int CONSTRAINT PK_Table1 PRIMARY KEY,
+  Column2 int
+);
