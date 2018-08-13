@@ -4,7 +4,7 @@
   * Use `<>` rather than `!=`
 
 # How to import WideWorldImporters or AdventureWorks
-1. Download the following `C:\Program Files\Microsoft SQL Server\MSSQL14.SQLEXPRESS\MSSQL\Backup`
+1. Download the following to `C:\Program Files\Microsoft SQL Server\MSSQL14.SQLEXPRESS\MSSQL\Backup`
    1. [WideWorldImporters-Full.bak](https://github.com/Microsoft/sql-server-samples/tree/master/samples/databases/wide-world-importers)
    2. [AdventureWorks2017.bak](https://github.com/Microsoft/sql-server-samples/tree/master/samples/databases/adventure-works)
 2. Start SQL Server Management Studio
