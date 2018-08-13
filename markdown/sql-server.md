@@ -13,7 +13,23 @@
   * Use `CROSS APPLY` when you want to `JOIN` a table and a table-valued function.
   * Use `OUTER APPLY` when you want to `LEFT JOIN` a table and a table-valued function.
   * [Using APPLY](https://docs.microsoft.com/en-us/previous-versions/sql/sql-server-2008-r2/ms175156(v=sql.105))
-  
+
+
+# Serial date
+Serial date|SQL Server datetime|Excel 1900 date system|Excel 1904 date system
+---|---|---|---
+0|1900-01-01|1900-01-00|1904-01-01
+1|1900-01-02|1900-01-01|1904-01-02
+58|1900-02-28|1900-02-27|1904-02-28
+59|1900-03-01|1900-02-28|1904-02-29
+60|1900-03-02|1900-02-29 (non-existing)|1904-03-01
+61|1900-03-03|1900-03-01|1904-03-02
+
+## How to convert int to datetime
+```sql
+SELECT CAST(0 AS datetime)
+```
+
 # How to import WideWorldImporters or AdventureWorks
 1. Download the following to `C:\Program Files\Microsoft SQL Server\MSSQL14.SQLEXPRESS\MSSQL\Backup`.
    1. [WideWorldImporters-Full.bak](https://github.com/Microsoft/sql-server-samples/tree/master/samples/databases/wide-world-importers)
