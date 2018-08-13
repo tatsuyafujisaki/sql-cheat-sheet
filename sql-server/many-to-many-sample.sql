@@ -5,7 +5,7 @@ DROP TABLE IF EXISTS Student;
 CREATE TABLE Student
 (
   ID int IDENTITY(1, 1) PRIMARY KEY,
-  Name nvarchar(max) NOT NULL,
+  Name nvarchar(max) NOT NULL
 );
 
 CREATE TABLE Course
