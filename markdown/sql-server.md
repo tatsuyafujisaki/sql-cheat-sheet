@@ -7,6 +7,9 @@
 * `CROSS JOIN`
   * returns a Cartesian product that includes every combination of the selected columns from both tables.
   * is useful to generate test data.
+* Correlated subqueries reference objects in the outer query.
+* Use `CROSS APPLY` when you want to `JOIN` a table and a table-valued function.
+* Use `OUTER APPLY` when you want to `LEFT JOIN` a table and a table-valued function.
 
 # How to import WideWorldImporters or AdventureWorks
 1. Download the following to `C:\Program Files\Microsoft SQL Server\MSSQL14.SQLEXPRESS\MSSQL\Backup`.
