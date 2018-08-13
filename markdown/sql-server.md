@@ -8,10 +8,12 @@
   * returns a Cartesian product that includes every combination of the selected columns from both tables.
   * is useful to generate test data.
 * Correlated subqueries reference objects in the outer query.
-* Trying to `JOIN` or `OUTER JOIN` a table-valued function causes a syntax error because a column cannot be passed to a function as a parameter.
+* `APPLY`
+  * Trying to `JOIN` or `OUTER JOIN` a table-valued function causes a syntax error because a column cannot be passed to a function as a parameter.
   * Use `CROSS APPLY` when you want to `JOIN` a table and a table-valued function.
   * Use `OUTER APPLY` when you want to `LEFT JOIN` a table and a table-valued function.
-
+  * [Using APPLY](https://docs.microsoft.com/en-us/previous-versions/sql/sql-server-2008-r2/ms175156(v=sql.105))
+  
 # How to import WideWorldImporters or AdventureWorks
 1. Download the following to `C:\Program Files\Microsoft SQL Server\MSSQL14.SQLEXPRESS\MSSQL\Backup`.
    1. [WideWorldImporters-Full.bak](https://github.com/Microsoft/sql-server-samples/tree/master/samples/databases/wide-world-importers)
