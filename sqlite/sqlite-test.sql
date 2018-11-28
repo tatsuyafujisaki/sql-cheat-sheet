@@ -1,8 +1,5 @@
 .bail ON
 .headers ON
-.separator ,
-.mode column
-PRAGMA page_size = 8192;
 VACUUM;
 
 DROP TABLE IF EXISTS table1;
