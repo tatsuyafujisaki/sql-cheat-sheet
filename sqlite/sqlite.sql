@@ -52,27 +52,17 @@ SELECT * FROM sqlite_master;
 -- Open a database or create it if it does not exist.
 .open database1.db
 
--- Create a table
-CREATE TABLE pets (
-    _id INTEGER PRIMARY KEY AUTOINCREMENT,
-    name TEXT NOT NULL,
-    age INTEGER NOT NULL DEFAULT 0
-);
-
 -- Print a table schema
 PRAGMA TABLE_INFO(table1);
 
--- Drop a table
-DROP TABLE table1;
-
 -- Attach db2 to current db
-ATTACH DATABASE db2 AS db2
+ATTACH DATABASE database2 AS database2
 
 -- Specify db if there is a table of the same name in both current db and db2
-SELECT * FROM db2.table2
+SELECT * FROM database2.table2
 
 -- Detach db
-DETACH DATABASE db2
+DETACH DATABASE database2
 
 -- Create a temporary table
 CREATE TEMP TABLE temp1(column1, column2, column3);
