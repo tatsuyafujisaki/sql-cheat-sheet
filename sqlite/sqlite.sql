@@ -4,32 +4,53 @@
 -- Quit
 .quit
 
--- print version
-SELECT sqlite_version();
+-- Show settings
+.show
 
--- print tables information
-SELECT * FROM sqlite_master;
+-- Print a database content
+.dump
 
--- backup and restore a database
+-- Print databases
+.databases
+
+-- Print tables
+.tables
+
+-- Print a table schema in one line
+.schema table1
+
+-- Print indices of a table
+.indices table1
+
+-- Run sql
+.read sql1.sql
+
+-- Import csv
+.import table1.csv table1
+
+-- Export csv
+.mode csv
+.output table1.csv
+SELECT * FROM table1;
+.output stdout
+
+-- Backup and restore a database
 .backup database1.sqlite3
 .restore database1.sqlite3
 
--- print database content
-.dump
+-- Print version
+SELECT sqlite_version();
 
--- dump table
+-- Print tables information
+SELECT * FROM sqlite_master;
+
+-- Dump a table
 .output table1.dmp
 .dump table1
 .output stdout
 
 -- Open a database or create it if it does not exist.
 .open database1.db
-
--- print databases
-.databases
-
--- print tables
-.tables
 
 -- Create a table
 CREATE TABLE pets (
@@ -38,47 +59,29 @@ CREATE TABLE pets (
     age INTEGER NOT NULL DEFAULT 0
 );
 
--- Print a table schema in one line
-.schema table1
-
 -- Print a table schema
 PRAGMA TABLE_INFO(table1);
 
 -- Drop a table
 DROP TABLE table1;
 
--- print table indices
-.indices table1
-
--- run sql
-.read sql1.sql
-
--- import csv
-.import table1.csv table1
-
--- export csv
-.mode csv
-.output table1.csv
-SELECT * FROM table1;
-.output stdout
-
--- attach db2 to current db
+-- Attach db2 to current db
 ATTACH DATABASE db2 AS db2
 
--- specify db if there is a table of the same name in both current db and db2
+-- Specify db if there is a table of the same name in both current db and db2
 SELECT * FROM db2.table2
 
--- detach db
+-- Detach db
 DETACH DATABASE db2
 
--- create temporary table
+-- Create a temporary table
 CREATE TEMP TABLE temp1(column1, column2, column3);
 
--- functions
+-- Functions
 SELECT datetime('now', 'localtime');
 SELECT datetime(CURRENT_DATE, 'localtime');
 SELECT datetime(CURRENT_TIME, 'localtime');
 SELECT datetime(CURRENT_TIMESTAMP, 'localtime');
 
--- get yyyymmdd
+-- Get yyyymmdd
 SELECT strftime('%Y%m%d', CURRENT_DATE);
