@@ -16,7 +16,10 @@
 -- Print tables
 .tables
 
--- Print a table schema in one line
+-- Print CREATE TABLE for tables
+.schema
+
+-- Print CREATE TABLE for a table
 .schema table1
 
 -- Print indices of a table
