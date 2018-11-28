@@ -1,4 +1,8 @@
+-- Display header in the result of SELECT statement
 .headers ON
+
+-- Align columns in the result of SELECT statement
+.mode column
 
 VACUUM;
 
