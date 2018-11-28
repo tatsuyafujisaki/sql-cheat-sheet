@@ -54,7 +54,7 @@ SELECT * FROM sqlite_master;
 
 -- Create a table
 CREATE TABLE pets (
-    _id INTEGER PRIMARY KEY AUTO INCREMENT,
+    _id INTEGER PRIMARY KEY AUTOINCREMENT,
     name TEXT NOT NULL,
     age INTEGER NOT NULL DEFAULT 0
 );
