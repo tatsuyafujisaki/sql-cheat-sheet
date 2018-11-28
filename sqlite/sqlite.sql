@@ -1,3 +1,9 @@
+-- Show help
+.help
+
+-- Quit
+.quit
+
 -- print version
 SELECT sqlite_version();
 
@@ -16,14 +22,30 @@ SELECT * FROM sqlite_master;
 .dump table1
 .output stdout
 
--- print database names
+-- Open a database or create it if it does not exist.
+.open database1.db
+
+-- print databases
 .databases
 
 -- print tables
 .tables
 
--- print table schema
+-- Create a table
+CREATE TABLE pets (
+    _id INTEGER PRIMARY KEY AUTO INCREMENT,
+    name TEXT NOT NULL,
+    age INTEGER NOT NULL DEFAULT 0
+);
+
+-- Print a table schema in one line
 .schema table1
+
+-- Print a table schema
+PRAGMA TABLE_INFO(table1);
+
+-- Drop a table
+DROP TABLE table1;
 
 -- print table indices
 .indices table1
