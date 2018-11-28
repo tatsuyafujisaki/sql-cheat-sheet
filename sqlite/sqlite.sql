@@ -10,9 +10,9 @@ SELECT sqlite_version();
 -- print tables information
 SELECT * FROM sqlite_master;
 
--- backup & restore database
-.backup db1.sqlite3
-.restore db1.sqlite3
+-- backup and restore a database
+.backup database1.sqlite3
+.restore database1.sqlite3
 
 -- print database content
 .dump
