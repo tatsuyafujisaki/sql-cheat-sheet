@@ -48,3 +48,9 @@ SELECT * FROM table1;
 -- Back up and restore a database
 .backup database1.sqlite3
 .restore database1.sqlite3
+
+-- Display header in the result of SELECT statement
+.headers ON
+
+-- Align columns in the result of SELECT statement
+.mode column
