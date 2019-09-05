@@ -10,6 +10,9 @@
 -- Print a database content
 .dump
 
+-- Open a database or create it if it does not exist.
+.open database1.db
+
 -- Print databases
 .databases
 
@@ -51,9 +54,6 @@ SELECT * FROM sqlite_master;
 .output table1.dmp
 .dump table1
 .output stdout
-
--- Open a database or create it if it does not exist.
-.open database1.db
 
 -- Print a table schema
 PRAGMA TABLE_INFO(table1);
