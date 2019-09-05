@@ -2,11 +2,11 @@
  * Read-only
  */
 
--- Show help
-.help
-
 -- Quit
 .quit
+
+-- Show help
+.help
 
 -- Show settings
 .show
@@ -45,6 +45,11 @@
 -- Run an SQL
 .read sql1.sql
 
+-- Dump a table
+.output table1.txt
+.dump table1
+.output stdout
+
 -- Import a CSV file as a table
 .import table1.csv table1
 
@@ -54,11 +59,6 @@
 SELECT * FROM table1;
 .output stdout
 
--- Dump a table
-.output table1.dmp
-.dump table1
-.output stdout
-
 -- Back up and restore a database
-.backup database1.sqlite3
-.restore database1.sqlite3
+.backup database1.db
+.restore database1.db
