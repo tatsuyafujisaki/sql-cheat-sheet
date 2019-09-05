@@ -1,3 +1,7 @@
+/*
+ * Read-only
+ */
+
 -- Show help
 .help
 
@@ -25,8 +29,18 @@
 -- Print CREATE TABLE for a table
 .schema table1
 
--- Print indices of a table
+-- Print the indices of a table
 .indices table1
+
+/*
+ * Not read-only
+ */
+
+-- Display header in the result of SELECT
+.headers ON
+
+-- Align columns in the result of SELECT
+.mode column
 
 -- Run an SQL
 .read sql1.sql
@@ -48,9 +62,3 @@ SELECT * FROM table1;
 -- Back up and restore a database
 .backup database1.sqlite3
 .restore database1.sqlite3
-
--- Display header in the result of SELECT statement
-.headers ON
-
--- Align columns in the result of SELECT statement
-.mode column
