@@ -1,23 +1,38 @@
+/*
+ * Read-only
+ */
+
 -- Print version
 SELECT sqlite_version();
 
--- Print tables information
+-- Print information about tables
 SELECT * FROM sqlite_master;
 
 -- Print a table schema
 PRAGMA TABLE_INFO(table1);
 
--- Attach db2 to current db
-ATTACH DATABASE database2 AS database2
+-- Get today in yyyymmdd
+SELECT strftime('%Y%m%d', CURRENT_DATE);
 
--- Specify db if there is a table of the same name in both current db and db2
-SELECT * FROM database2.table2
+-- Specify a database if multiple databases have the same table name.
+SELECT * FROM database1.table1
 
--- Detach db
-DETACH DATABASE database2
+/*
+ * Not read-only
+ */
 
--- Create a temporary table
-CREATE TEMP TABLE temp1(column1, column2, column3);
+-- Compact the database file
+VACUUM;
+
+-- Add or remove another database file to the current database connection
+ATTACH DATABASE another_database AS another_database
+DETACH DATABASE another_database
+
+-- Drop a datable if it exists
+DROP TABLE IF EXISTS table1;
+
+-- Create a table that is dropped after the current database connection
+CREATE TEMP TABLE temp1(column1, column2);
 
 -- Functions
 SELECT datetime('now', 'localtime');
@@ -25,14 +40,7 @@ SELECT datetime(CURRENT_DATE, 'localtime');
 SELECT datetime(CURRENT_TIME, 'localtime');
 SELECT datetime(CURRENT_TIMESTAMP, 'localtime');
 
--- Get yyyymmdd
-SELECT strftime('%Y%m%d', CURRENT_DATE);
-
-VACUUM;
-
-DROP TABLE IF EXISTS table1;
-
-CREATE TABLE table1 (
+CREATE TABLE IF NOT EXISTS table1 (
   _id INTEGER PRIMARY KEY AUTOINCREMENT,
   name TEXT NOT NULL,
   age INTEGER NOT NULL CHECK(0 <= age),
