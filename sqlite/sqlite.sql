@@ -1,59 +1,8 @@
--- Show help
-.help
-
--- Quit
-.quit
-
--- Show settings
-.show
-
--- Print a database content
-.dump
-
--- Open a database or create it if it does not exist.
-.open database1.db
-
--- Print databases
-.databases
-
--- Print tables
-.tables
-
--- Print CREATE TABLE for tables
-.schema
-
--- Print CREATE TABLE for a table
-.schema table1
-
--- Print indices of a table
-.indices table1
-
--- Run sql
-.read sql1.sql
-
--- Import csv
-.import table1.csv table1
-
--- Export csv
-.mode csv
-.output table1.csv
-SELECT * FROM table1;
-.output stdout
-
--- Backup and restore a database
-.backup database1.sqlite3
-.restore database1.sqlite3
-
 -- Print version
 SELECT sqlite_version();
 
 -- Print tables information
 SELECT * FROM sqlite_master;
-
--- Dump a table
-.output table1.dmp
-.dump table1
-.output stdout
 
 -- Print a table schema
 PRAGMA TABLE_INFO(table1);
