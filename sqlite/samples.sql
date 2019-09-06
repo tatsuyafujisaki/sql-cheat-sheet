@@ -17,6 +17,9 @@ SELECT strftime('%Y%m%d', CURRENT_DATE);
 -- Specify a database if multiple databases have the same table name.
 SELECT * FROM database1.table1
 
+-- Use GLOB as an expression in a SELECT statement
+SELECT column1 GLOB '*[a-zA-Z]*' FROM table1
+
 /*
  * Not read-only
  */
